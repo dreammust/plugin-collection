@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.plugin.demo.model;
+package com.plugin.collect.model;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>

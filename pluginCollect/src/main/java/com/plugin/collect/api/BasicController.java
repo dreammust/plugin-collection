@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.plugin.demo.web;
+package com.plugin.collect.api;
 
-import com.plugin.demo.model.User;
+import com.plugin.collect.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
