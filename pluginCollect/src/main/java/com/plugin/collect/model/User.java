@@ -20,10 +20,19 @@ package com.plugin.collect.model;
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
 public class User {
+    private Integer id;
 
     private String name;
 
     private Integer age;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
