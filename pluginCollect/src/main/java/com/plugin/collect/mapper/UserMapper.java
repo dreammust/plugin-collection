@@ -13,7 +13,7 @@ import java.util.List;
  * </p>
  *
  * @author dreammust@163.com
- * @since 2023-12-19
+ * @since 2023-12-20
  */
 @Component
 public interface UserMapper extends BaseMapper<UserModel> {
