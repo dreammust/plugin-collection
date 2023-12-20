@@ -21,7 +21,7 @@ import java.util.List;
  * @since 2023-12-19
  */
 @RestController
-@RequestMapping("/userModel")
+@RequestMapping("/user")
 public class UserController {
 
     @Resource
@@ -33,8 +33,8 @@ public class UserController {
         return userService.selectAll();
     }
     @GetMapping(value = "add")
-    public void add() {
-        userService.batchAdd();
+    public void add(UserModel userModel) {
+        userService.save(userModel);
     }
 }
 

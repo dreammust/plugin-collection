@@ -5,6 +5,7 @@ import com.plugin.collect.model.UserModel;
 import com.plugin.collect.mapper.UserMapper;
 import com.plugin.collect.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.plugin.collect.thirdparty.ThirdPartyServiceUtils;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import sun.net.www.http.Hurryable;
@@ -30,18 +31,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserModel> implemen
     private UserMapper userMapper;
     @Override
     public List<UserModel> selectAll() {
+        //调用第三方接口
+        String userName = ThirdPartyServiceUtils.getName("user");
+        System.out.println("-------"+userName);
         return userMapper.selectAll();
     }
 
-    @Override
-    public void batchAdd() {
-        UserModel model = new UserModel();
-        model.setName("q111");
-        model.setAge(1);
-        model.setEmail("188");
-        model.setCreatedAt(System.currentTimeMillis());
-        userMapper.insert(model);
-    }
 
     @Override
     public boolean save(UserModel entity) {
