@@ -34,6 +34,8 @@ public class UserControllerTest {
     @Resource
     private UserService userService;
 
+    @Resource
+    private UserController userController;
 
     @Test
     public void test() throws UnsupportedEncodingException {
@@ -58,4 +60,13 @@ public class UserControllerTest {
         List<UserModel> userModels = userService.selectAll();
         System.out.println(userModels.get(0));
     }
+
+    @Test
+    public void test2() {
+        Mockito.mockStatic(ThirdPartyServiceUtils.class);
+        Mockito.when(ThirdPartyServiceUtils.getName("user")).thenReturn("test");
+        List<UserModel> userModels = userController.getAll();
+        System.out.println(userModels.get(0));
+    }
+
 }
