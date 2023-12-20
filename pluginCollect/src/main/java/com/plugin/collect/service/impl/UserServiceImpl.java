@@ -1,19 +1,14 @@
 package com.plugin.collect.service.impl;
 
-import cn.hutool.core.date.DateTime;
-import com.plugin.collect.model.UserModel;
-import com.plugin.collect.mapper.UserMapper;
-import com.plugin.collect.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.plugin.collect.mapper.UserMapper;
+import com.plugin.collect.model.UserModel;
+import com.plugin.collect.service.UserService;
 import com.plugin.collect.thirdparty.ThirdPartyServiceUtils;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import sun.net.www.http.Hurryable;
 
 import javax.annotation.Resource;
-import javax.xml.crypto.Data;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,7 +29,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserModel> implemen
         //调用第三方接口
         String userName = ThirdPartyServiceUtils.getName("user");
         System.out.println("-------"+userName);
-        return userMapper.selectAll();
+        List<UserModel> all = userMapper.selectAll();
+        System.out.println("-------"+all.toString());
+        return all;
+    }
+
+    @Override
+    public List<UserModel> queryListByCompanyId(long companyId) {
+        List<UserModel> list = userMapper.queryListByCompanyId(companyId);
+        return list;
     }
 
 

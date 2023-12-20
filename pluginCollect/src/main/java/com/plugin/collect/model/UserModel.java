@@ -22,6 +22,9 @@ public class UserModel extends Model<UserModel> {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
+    private Long companyId;
+
+
     private String name;
 
     private Integer age;
@@ -30,6 +33,13 @@ public class UserModel extends Model<UserModel> {
 
     private Long createdAt;
 
+    public Long getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
+    }
 
     public Integer getId() {
         return id;

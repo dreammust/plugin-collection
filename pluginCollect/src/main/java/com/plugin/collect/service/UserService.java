@@ -18,4 +18,5 @@ public interface UserService extends IService<UserModel> {
     List<UserModel> selectAll();
 
 
+    List<UserModel> queryListByCompanyId(long companyId);
 }

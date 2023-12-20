@@ -20,4 +20,6 @@ public interface UserMapper extends BaseMapper<UserModel> {
 
     public List<UserModel> selectAll();
 
+    List<UserModel> queryListByCompanyId(long companyId);
+
 }

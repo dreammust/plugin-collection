@@ -5,6 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.plugin.collect.model.UserModel">
         <id column="id" property="id" />
+        <id column="company_id" property="companyId" />
         <result column="name" property="name" />
         <result column="age" property="age" />
         <result column="email" property="email" />
@@ -12,6 +13,10 @@
     </resultMap>
 
     <select id="selectAll" resultMap="BaseResultMap">
-        SELECT id, name, age, email, created_at FROM user
+        SELECT id, company_id,name, age, email, created_at FROM user
+    </select>
+
+    <select id="queryListByCompanyId" resultMap="BaseResultMap">
+        SELECT id, company_id,name, age, email, created_at FROM user WHERE company_id = #{companyId}
     </select>
 </mapper>
