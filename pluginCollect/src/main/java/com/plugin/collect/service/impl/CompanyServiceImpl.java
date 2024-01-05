@@ -1,15 +1,14 @@
 package com.plugin.collect.service.impl;
 
-import com.plugin.collect.model.CompanyModel;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.plugin.collect.mapper.CompanyMapper;
+import com.plugin.collect.model.CompanyModel;
 import com.plugin.collect.model.UserModel;
 import com.plugin.collect.service.CompanyService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.plugin.collect.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 

@@ -28,9 +28,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserModel> implemen
     public List<UserModel> selectAll() {
         //调用第三方接口
         String userName = ThirdPartyServiceUtils.getName("user");
-        System.out.println("-------"+userName);
+        System.out.println("selectAll :"+userName);
         List<UserModel> all = userMapper.selectAll();
-        System.out.println("-------"+all.toString());
         return all;
     }
 
