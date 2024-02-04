@@ -3,9 +3,7 @@ package com.plugin.collect.api;
 
 import com.plugin.collect.model.UserModel;
 import com.plugin.collect.service.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -29,6 +27,17 @@ public class UserController {
     public List<UserModel> getAll() {
 
         return userService.selectAll();
+    }
+
+    /**
+     *
+     * @param userModel
+     * @return
+     */
+    @PostMapping(value = "postAll")
+    public UserModel postAll(@RequestBody UserModel userModel) {
+
+        return userModel;
     }
     @GetMapping(value = "add")
     public void add(UserModel userModel) {
